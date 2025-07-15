@@ -51,35 +51,54 @@ const skills = [
     description: "AI/ML algorithms, data analysis, and predictive modeling",
     color: "from-purple-400 to-purple-600",
     percentage: 85
+  },
+  {
+    icon: Trophy,
+    name: "C++",
+    description: "Mastering DSA, algorithms, and performance optimization",
+    color: "from-purple-400 to-purple-600",
+    percentage: 85
   }
 ]
 
 const timelineEvents = [
   {
-    year: "2024",
-    title: "Full Stack Developer",
-    description: "Leading development of modern web applications",
+    year: "2025",
+    title: "Scholar @SAP",
+    description: "WILP focussed at working on enterprise solutions along with academics",
     icon: Trophy
   },
-  {
-    year: "2023",
-    title: "React Specialist",
-    description: "Focused on frontend architecture and user experience",
+  { 
+    year: "2024",
+    title: "Backend Developer @Oriens Infotech",
+    description: "Built multiple api routes, integrated AI into website as a chatbot and managed CI/CD pipelines",
     icon: Target
   },
   {
+    year: "2024",
+    title: "Frontend Developer @Skygoal Innova Technologies Pvt. Ltd.",
+    description: "Build multiple web pages using React, Tailwind CSS and integrated backend APIs. Built dashboard page for statistics using Recharts. Implemented form validation for admin pages.",
+    icon: Sparkles
+  },
+  {
+    year: "2023",
+    title: "Web Team Member @GDSC TMSL",
+    description: "Contributed to the official Tech Fest website, assisted in managing coding contests and hackathons for the club.",
+    icon: Sparkles
+  },
+  {
     year: "2022",
-    title: "Software Engineer",
-    description: "Started journey in professional software development",
+    title: "Social Media Manager @Hunar Ke Nawab",
+    description: "Handled official Social Media account of the club. Created engaging content, managed posts, and interacted with the community to promote club activities.",
     icon: Sparkles
   }
 ]
 
 const achievements = [
   { number: "50+", label: "Projects Completed", icon: Trophy },
-  { number: "5+", label: "Years Experience", icon: Calendar },
+  { number: "2+", label: "Years Experience", icon: Calendar },
   { number: "20+", label: "Technologies Mastered", icon: Code },
-  { number: "100%", label: "Client Satisfaction", icon: Target }
+  { number: "10+", label: "Hackathons Attended", icon: Target }
 ]
 
 function useIntersectionObserver(options = {}) {
@@ -207,7 +226,7 @@ export default function AboutSection() {
             transition={{ duration: 0.3 }}
           >
             <MapPin className="w-5 h-5 text-primary" />
-            <span>San Francisco, CA</span>
+            <span>Bengaluru, India</span>
           </motion.div>
           <motion.div 
             className="flex items-center gap-3 text-muted-foreground"
@@ -215,7 +234,7 @@ export default function AboutSection() {
             transition={{ duration: 0.3 }}
           >
             <Calendar className="w-5 h-5 text-primary" />
-            <span>5+ Years Experience</span>
+            <span>2+ Years Experience</span>
           </motion.div>
         </motion.div>
 

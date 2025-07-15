@@ -104,7 +104,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              John 
+              Subham
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 50 }}
@@ -112,7 +112,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-primary ml-4"
             >
-              Doe
+              Chandra
             </motion.span>
           </motion.h1>
           

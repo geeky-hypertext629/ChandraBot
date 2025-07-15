@@ -18,21 +18,21 @@ export function SimpleCenteredContactForm() {
   const socials = [
     {
       title: "twitter",
-      href: "https://twitter.com/mannupaaji",
+      href: "https://x.com/SubhamC60715111",
       icon: (
         <IconBrandX className="h-5 w-5 text-neutral-600 dark:text-neutral-400 hover:text-black" />
       ),
     },
     {
       title: "github",
-      href: "https://github.com/manuarora700",
+      href: "http://github.com/geeky-hypertext629/",
       icon: (
         <IconBrandGithub className="h-5 w-5 text-neutral-600 dark:text-neutral-400 hover:text-black" />
       ),
     },
     {
       title: "linkedin",
-      href: "https://linkedin.com/manuarora28",
+      href: "https://www.linkedin.com/in/subham528/",
       icon: (
         <IconBrandLinkedin className="h-5 w-5 text-neutral-600 dark:text-neutral-400 hover:text-black" />
       ),

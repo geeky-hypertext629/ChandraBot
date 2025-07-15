@@ -177,19 +177,19 @@ export default function ContactSection() {
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com",
+      href: "http://github.com/geeky-hypertext629/",
       color: "hover:text-white"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/subham528/",
       color: "hover:text-blue-400"
     },
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:contact@example.com",
+      href: "mailto:subhamchandra222@gmail.com",
       color: "hover:text-primary"
     }
   ]

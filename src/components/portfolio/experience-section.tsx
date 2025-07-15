@@ -123,70 +123,45 @@ const ExperienceSection: React.FC = () => {
   const experienceData = [
     {
       type: 'experience' as const,
-      title: 'Senior Software Engineer',
-      subtitle: 'TechCorp Solutions',
-      duration: '2022 - Present',
-      location: 'San Francisco, CA',
+      title: 'Frontend Developer Intern',
+      subtitle: 'Skygoal Innova Technologies Pvt. Ltd',
+      duration: '2024',
+      location: 'Hyderabad, India',
       achievements: [
-        'Led development of microservices architecture serving 10M+ daily active users',
-        'Implemented CI/CD pipeline reducing deployment time by 75%',
-        'Mentored 5 junior developers and conducted technical interviews',
-        'Collaborated with product team to deliver 15+ features ahead of schedule'
+        'Developed multiple responsive pages customers page, bookings page, profile page, reports page and staff admin page using material ui, tailwind and react.',
+        'Implemented form data handling using react hook form along with efficient form validation and user input management.',
+        'Designed and implemented dashboard visualizations using Recharts, rendering dynamic data into Pie Charts, Bar Charts, and Line Charts for improved analytics',
+        'Utilized React Data Table to display dynamic tabular data with pagination, filtering, and sorting for enhanced usability.'
       ]
     },
     {
       type: 'experience' as const,
-      title: 'Full Stack Developer',
-      subtitle: 'InnovateTech Startup',
-      duration: '2020 - 2022',
+      title: 'Backend Developer Intern',
+      subtitle: 'Oriens Infotech Pvt. Ltd',
+      duration: '2024',
       location: 'Remote',
       achievements: [
-        'Built responsive web applications using React, Node.js, and PostgreSQL',
-        'Optimized application performance resulting in 40% faster load times',
-        'Integrated third-party APIs and payment processing systems',
-        'Participated in agile development cycles and code reviews'
+        'Developed multiple api routes for users, courses and certificates using Express.js and MongooseL',
+        'Integrated multiple API routes into the frontend to enable seamless communication between client-side and server-side functionalities.',
+        'AI aided chatbot to assist users with course recommendations and queries',
+        'Plagiarism detection using AI to ensure content originality and integrity',
       ]
     },
-    {
-      type: 'experience' as const,
-      title: 'Frontend Developer',
-      subtitle: 'Digital Agency Pro',
-      duration: '2019 - 2020',
-      location: 'Los Angeles, CA',
-      achievements: [
-        'Developed pixel-perfect websites for 20+ clients across various industries',
-        'Implemented modern JavaScript frameworks and responsive design principles',
-        'Collaborated with designers and project managers to deliver projects on time',
-        'Maintained and updated existing client websites and applications'
-      ]
-    }
+
   ]
 
   const educationData = [
     {
       type: 'education' as const,
-      title: 'Master of Science in Computer Science',
-      subtitle: 'Stanford University',
-      duration: '2017 - 2019',
-      location: 'Palo Alto, CA',
+      title: 'Bachelor of Technology in Computer Science and Engineering',
+      subtitle: 'Techno Main Saltlake, Kolkata',
+      duration: '2021 - 2025',
+      location: 'Kolkata, India',
       achievements: [
-        'Specialized in Machine Learning and Artificial Intelligence',
-        'Thesis: "Deep Learning Applications in Natural Language Processing"',
-        'Teaching Assistant for Advanced Algorithms course',
-        'GPA: 3.8/4.0'
-      ]
-    },
-    {
-      type: 'education' as const,
-      title: 'Bachelor of Science in Software Engineering',
-      subtitle: 'University of California, Berkeley',
-      duration: '2013 - 2017',
-      location: 'Berkeley, CA',
-      achievements: [
-        'Magna Cum Laude graduate with focus on Software Development',
-        'President of Computer Science Student Association',
-        'Led team in National Collegiate Programming Contest',
-        'GPA: 3.7/4.0'
+        'Studied core subjects including Data Structures, Algorithms, Database Management Systems, and Networking',
+        'Top 5 teams in the Smart India Hackathon oncampus round',
+        '1st in Bits and Pieces Content Writing Competition',
+        'CGPA: 8.5/10'
       ]
     }
   ]
