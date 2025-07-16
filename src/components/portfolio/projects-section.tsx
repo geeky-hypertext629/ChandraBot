@@ -1,117 +1,165 @@
-"use client"
+"use client";
 
-import { useState } from 'react'
-import { motion, useInView } from 'motion/react'
-import { useRef } from 'react'
-import type { Variants } from 'framer-motion'
-import { ExternalLink, Github, Code, Palette, Server, Smartphone, Globe, Database, Folder, Star } from 'lucide-react'
+import { useState } from "react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+import type { Variants } from "framer-motion";
+import {
+  ExternalLink,
+  Github,
+  Code,
+  Palette,
+  Server,
+  Smartphone,
+  Globe,
+  Database,
+  Folder,
+  Star,
+} from "lucide-react";
 
 const projects = [
   {
     id: 1,
     title: "E-Commerce Platform",
-    description: "Full-stack e-commerce platform with payment integration, inventory management, and real-time analytics dashboard.",
-    image: "/file.svg",
-    techStack: ["React", "Nodejs", "MongoDB", "Stripe", "Tailwind CSS","Cloudinary"],
+    description:
+      "Full-stack e-commerce platform with payment integration, inventory management, and real-time analytics dashboard.",
+    image: "/ecommerce.png",
+    techStack: [
+      "React",
+      "Nodejs",
+      "MongoDB",
+      "Stripe",
+      "Tailwind CSS",
+      "Cloudinary",
+    ],
     liveUrl: "https://superb-pie-58d2c9.netlify.app/",
     sourceUrl: "https://github.com/geeky-hypertext629/Ecommerce",
     category: "Full Stack",
-    featured: true
+    featured: true,
   },
   {
     id: 2,
     title: "Swift-Pay",
-    description: "Online payment gateway with secure transactions, user authentication, and transaction history. Send and receive payments instantly",
-    image: "/file.svg",
-    techStack: ["Next", "Typescript", "Prisma", "Postgresql","AWS EC2","Docker"],
-    liveUrl: "https://chat.example.com",
-    sourceUrl: "https://github.com/example/ai-chat",
+    description:
+      "Online payment gateway with secure transactions, user authentication, and transaction history. Send and receive payments instantly",
+    image: "/swiftPay.png",
+    techStack: [
+      "Next",
+      "Typescript",
+      "Prisma",
+      "Postgresql",
+      "AWS EC2",
+      "Docker",
+    ],
+    liveUrl: "https://swift-pay-user-app.vercel.app/",
+    sourceUrl: "https://github.com/geeky-hypertext629/SwiftPay",
     category: "AI/ML",
-    featured: true
+    featured: true,
   },
   {
     id: 3,
     title: "Portfolio Website",
-    description: "An AI powered chatbot integrated into a portfolio website, providing personalized assistance, booking appointments and providing information to visitors.",
-    image: "/file.svg",
+    description:
+      "An AI powered chatbot integrated into a portfolio website, providing personalized assistance, booking appointments and providing information to visitors.",
+    image: "/portfolio.png",
     techStack: ["Next.js", "Vapi", "Make.com", "lucide react"],
     liveUrl: "#",
     sourceUrl: "https://github.com/geeky-hypertext629/ChandraBot",
     category: "Frontend",
-    featured: false
+    featured: false,
   },
   {
     id: 4,
     title: "Airline Ticket Booking System",
-    description: "A Flight Booking System API built on Microservices architecture containing Flights and Search Service, Auth Service, Booking Service and Reminder Service where users can search and book different flights.",
-    image: "/file.svg",
+    description:
+      "A Flight Booking System API built on Microservices architecture containing Flights and Search Service, Auth Service, Booking Service and Reminder Service where users can search and book different flights.",
+    image: "/airline.png",
     techStack: ["Express.js", "RabbitMQ", "JWT", "Microservices", "MySQL"],
     liveUrl: "https://github.com/geeky-hypertext629/API_GATEWAY_AIRLINE",
     sourceUrl: "https://github.com/geeky-hypertext629/API_GATEWAY_AIRLINE",
     category: "Backend",
-    featured: false
+    featured: false,
   },
   {
     id: 5,
     title: "Smart Route Planner",
-    description: "This project integrates real-time pollution data with route planning, providing users with the best routes based on air quality. It uses prediction ensemble model trained using XGBoost to predict the pollution level of different routes for navigation",
-    image: "/file.svg",
-    techStack: ["Google Colab", "Pandas", "Matplotlib", "Mapbox", "Vite", "Python", "Digital Ocean"],
+    description:
+      "This project integrates real-time pollution data with route planning, providing users with the best routes based on air quality. It uses prediction ensemble model trained using XGBoost to predict the pollution level of different routes for navigation",
+    image: "/srp.png",
+    techStack: [
+      "Google Colab",
+      "Pandas",
+      "Matplotlib",
+      "Mapbox",
+      "Vite",
+      "Python",
+      "Digital Ocean",
+    ],
     liveUrl: "https://srp-pollution-integrated.vercel.app/",
     sourceUrl: "https://github.com/geeky-hypertext629/SRP-pollution-integrated",
     category: "AI/ML",
-    featured: false
+    featured: false,
   },
   {
     id: 6,
-    title: "VisualSense",
-    description: "AI Image processor - compress image, remove background, generate cool images, perform image transformations all in one platform using cloudinary.",
-    image: "/file.svg",
-    techStack: ["Cloudinary", "Next.js", "Clerk", "Zod", "MongoDB","Stripe", "lucide-react"],
+    title: "AI-Baxus-Bottle-Comparator",
+    description:
+      "A chrome extension that scrapes whisky/wine bottle information from e-commerce and retail websites, then cross-references with the BAXUS marketplace to determine if the same bottles are available at better prices.",
+    image: "/baxus.png",
+    techStack: [
+      "Gemini flash-2.0 API",
+      "Recharts",
+      "React",
+      "Zod",
+      "Tailwind CSS",
+      "Web Scraping",
+      "lucide-react",
+    ],
     liveUrl: "https://github.com/geeky-hypertext629/VisualSense",
-    sourceUrl: "https://visual-sense.vercel.app/",
+    sourceUrl: "https://github.com/geeky-hypertext629/AI-Baxus-Bottle-Comparator",
     category: "AI/ML",
-    featured: true
-  }
-]
+    featured: true,
+  },
+];
 
 const techStackIcons = {
   "Next.js": Code,
-  "React": Code,
+  React: Code,
   "Vue.js": Code,
-  "TypeScript": Code,
-  "JavaScript": Code,
+  TypeScript: Code,
+  JavaScript: Code,
   "Node.js": Server,
-  "Python": Code,
-  "Django": Server,
-  "PostgreSQL": Database,
-  "MongoDB": Database,
-  "Firebase": Database,
+  Python: Code,
+  Django: Server,
+  PostgreSQL: Database,
+  MongoDB: Database,
+  Firebase: Database,
   "Tailwind CSS": Palette,
-  "CSS3": Palette,
+  CSS3: Palette,
   "Material-UI": Palette,
-  "Bootstrap": Palette,
+  Bootstrap: Palette,
   "Socket.io": Globe,
   "OpenAI API": Code,
   "OpenWeather API": Globe,
-  "Stripe": Code,
+  Stripe: Code,
   "Chart.js": Code,
   "D3.js": Code,
   "Framer Motion": Code,
-  "Redux": Code
-}
+  Redux: Code,
+};
 
-const categories = ["All", "Full Stack", "Frontend", "AI/ML", "Data Science"]
+const categories = ["All", "Full Stack", "Frontend", "AI/ML", "Data Science"];
 
 export default function ProjectsSection() {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
-  const [selectedCategory, setSelectedCategory] = useState("All")
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory)
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -119,28 +167,28 @@ export default function ProjectsSection() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  }
+        delayChildren: 0.3,
+      },
+    },
+  };
 
-  const itemVariants : Variants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  }
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <section className="py-20 bg-background relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           ref={ref}
@@ -163,11 +211,12 @@ export default function ProjectsSection() {
               Featured Projects
             </h2>
           </motion.div>
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            A showcase of my recent work spanning web development, mobile apps, and full-stack solutions.
+            A showcase of my recent work spanning web development, mobile apps,
+            and full-stack solutions.
           </motion.p>
         </motion.div>
 
@@ -185,8 +234,8 @@ export default function ProjectsSection() {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-primary text-primary-foreground shadow-lg'
-                  : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50'
+                  ? "bg-primary text-primary-foreground shadow-lg"
+                  : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -215,9 +264,9 @@ export default function ProjectsSection() {
             >
               <motion.div
                 className="bg-card border border-border rounded-lg overflow-hidden shadow-lg transition-all duration-300 ease-out h-full"
-                whileHover={{ 
+                whileHover={{
                   y: -8,
-                  transition: { duration: 0.3 } 
+                  transition: { duration: 0.3 },
                 }}
               >
                 {/* Featured Badge */}
@@ -234,7 +283,7 @@ export default function ProjectsSection() {
 
                 {/* Project Image */}
                 <div className="relative h-48 bg-muted overflow-hidden">
-                  <motion.div 
+                  {/* <motion.div 
                     className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5"
                     animate={{ 
                       background: hoveredProject === project.id 
@@ -242,46 +291,65 @@ export default function ProjectsSection() {
                         : "linear-gradient(135deg, rgba(139,92,246,0.2), rgba(139,92,246,0.05))"
                     }}
                     transition={{ duration: 0.3 }}
-                  />
-                  
+                  /> */}
+                            <motion.div
+                              className="absolute inset-0"
+                              style={{
+                                backgroundImage: `
+                linear-gradient(135deg, ${
+                  hoveredProject === project.id
+                    ? "rgba(139,92,246,0.3), rgba(139,92,246,0.1)"
+                    : "rgba(139,92,246,0.2), rgba(139,92,246,0.05)"
+                }),
+                url(${project.image})
+              `,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                                backgroundRepeat: "no-repeat",
+                                zIndex: 0,
+                              }}
+                              animate={{}}
+                              transition={{ duration: 0.3 }}
+                            />
+
                   {/* Animated Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
                     {[...Array(6)].map((_, i) => (
                       <motion.div
                         key={i}
                         className="absolute w-2 h-2 bg-primary rounded-full"
-                        initial={{ 
+                        initial={{
                           x: Math.random() * 400,
                           y: Math.random() * 200,
-                          scale: Math.random() * 0.5 + 0.5
+                          scale: Math.random() * 0.5 + 0.5,
                         }}
                         animate={{
                           y: [null, -10, 10, -10],
-                          opacity: [0.3, 0.8, 0.3, 0.8]
+                          opacity: [0.3, 0.8, 0.3, 0.8],
                         }}
                         transition={{
                           duration: Math.random() * 4 + 4,
                           repeat: Infinity,
                           ease: "easeInOut",
-                          delay: Math.random() * 2
+                          delay: Math.random() * 2,
                         }}
                       />
                     ))}
                   </div>
-                  
+
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div 
+                    <motion.div
                       className="text-6xl text-primary/30"
-                      animate={{ 
+                      animate={{
                         scale: hoveredProject === project.id ? 1.2 : 1,
-                        rotate: hoveredProject === project.id ? 5 : 0
+                        rotate: hoveredProject === project.id ? 5 : 0,
                       }}
                       transition={{ duration: 0.3 }}
                     >
                       <Code />
                     </motion.div>
                   </div>
-                  
+
                   {/* Hover Overlay */}
                   <motion.div
                     className="absolute inset-0 bg-background/90 backdrop-blur-md flex items-center justify-center gap-4"
@@ -297,7 +365,10 @@ export default function ProjectsSection() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: hoveredProject === project.id ? 0 : 20, opacity: hoveredProject === project.id ? 1 : 0 }}
+                      animate={{
+                        y: hoveredProject === project.id ? 0 : 20,
+                        opacity: hoveredProject === project.id ? 1 : 0,
+                      }}
                       transition={{ duration: 0.3, delay: 0.1 }}
                     >
                       <ExternalLink className="h-4 w-4" />
@@ -311,7 +382,10 @@ export default function ProjectsSection() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: hoveredProject === project.id ? 0 : 20, opacity: hoveredProject === project.id ? 1 : 0 }}
+                      animate={{
+                        y: hoveredProject === project.id ? 0 : 20,
+                        opacity: hoveredProject === project.id ? 1 : 0,
+                      }}
                       transition={{ duration: 0.3, delay: 0.2 }}
                     >
                       <Github className="h-4 w-4" />
@@ -330,7 +404,7 @@ export default function ProjectsSection() {
                       {project.category}
                     </span>
                   </div>
-                  
+
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-grow">
                     {project.description}
                   </p>
@@ -338,23 +412,25 @@ export default function ProjectsSection() {
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {project.techStack.map((tech) => {
-                      const IconComponent = techStackIcons[tech as keyof typeof techStackIcons] || Code
+                      const IconComponent =
+                        techStackIcons[tech as keyof typeof techStackIcons] ||
+                        Code;
                       return (
                         <motion.div
                           key={tech}
                           className="flex items-center gap-1 px-3 py-1 bg-muted rounded-full text-xs text-muted-foreground border border-border"
-                          whileHover={{ 
+                          whileHover={{
                             scale: 1.05,
                             backgroundColor: "var(--color-primary)",
                             color: "var(--color-primary-foreground)",
-                            borderColor: "var(--color-primary)"
+                            borderColor: "var(--color-primary)",
                           }}
                           transition={{ duration: 0.2 }}
                         >
                           <IconComponent className="h-3 w-3" />
                           {tech}
                         </motion.div>
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -364,9 +440,10 @@ export default function ProjectsSection() {
                   className="absolute inset-0 rounded-lg pointer-events-none"
                   initial={{ background: "transparent" }}
                   animate={{
-                    background: hoveredProject === project.id 
-                      ? "linear-gradient(45deg, transparent, rgba(139,92,246,0.2), transparent)"
-                      : "transparent"
+                    background:
+                      hoveredProject === project.id
+                        ? "linear-gradient(45deg, transparent, rgba(139,92,246,0.2), transparent)"
+                        : "transparent",
                   }}
                   transition={{ duration: 0.3 }}
                 />
@@ -391,7 +468,8 @@ export default function ProjectsSection() {
               Let's Build Something Amazing Together
             </h3>
             <p className="text-muted-foreground mb-6">
-              Have a project in mind? I'd love to discuss how we can bring your ideas to life.
+              Have a project in mind? I'd love to discuss how we can bring your
+              ideas to life.
             </p>
             <motion.a
               href="#contact"
@@ -406,5 +484,5 @@ export default function ProjectsSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
