@@ -106,6 +106,7 @@ interface ShootingStarsProps {
 }
 
 const getRandomStartPoint = () => {
+  if (typeof window === 'undefined') return { x: 0, y: 0, angle: 45 };
   const side = Math.floor(Math.random() * 4);
   const offset = Math.random() * window.innerWidth;
 
@@ -164,6 +165,7 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
       if (star) {
         setStar((prevStar) => {
           if (!prevStar) return null;
+          if (typeof window === 'undefined') return null;
           const newX =
             prevStar.x +
             prevStar.speed * Math.cos((prevStar.angle * Math.PI) / 180);

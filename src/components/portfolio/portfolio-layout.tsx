@@ -23,6 +23,7 @@ export default function PortfolioLayout() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (typeof window === 'undefined') return;
       const sections = ['hero', 'about', 'projects', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
@@ -38,10 +39,11 @@ export default function PortfolioLayout() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-
-    return () => window.removeEventListener('scroll', handleScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Initial check
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   const handleNavigation = (sectionId: string) => {

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
+import type { Variants } from 'framer-motion'
 import { ExternalLink, Github, Code, Palette, Server, Smartphone, Globe, Database, Folder, Star } from 'lucide-react'
 
 const projects = [
@@ -123,7 +124,7 @@ export default function ProjectsSection() {
     }
   }
 
-  const itemVariants = {
+  const itemVariants : Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,

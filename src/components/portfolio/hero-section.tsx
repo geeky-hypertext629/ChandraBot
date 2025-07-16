@@ -66,8 +66,8 @@ export default function HeroSection() {
             key={i}
             className="absolute w-2 h-2 bg-primary/20 rounded-full"
             initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
+              y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
               scale: Math.random() * 0.5 + 0.5
             }}
             animate={{

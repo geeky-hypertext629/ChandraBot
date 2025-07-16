@@ -19,14 +19,17 @@ const Background = () => {
   const [strips, setStrips] = useState<number[]>([]);
   useEffect(() => {
     const calculateStrips = () => {
+      if (typeof window === 'undefined') return;
       const viewportWidth = window.innerWidth;
       const stripWidth = 80;
       const numberOfStrips = Math.ceil(viewportWidth / stripWidth);
       setStrips(Array.from({ length: numberOfStrips }, (_, i) => i));
     };
     calculateStrips();
-    window.addEventListener("resize", calculateStrips);
-    return () => window.removeEventListener("resize", calculateStrips);
+    if (typeof window !== 'undefined') {
+      window.addEventListener("resize", calculateStrips);
+      return () => window.removeEventListener("resize", calculateStrips);
+    }
   }, []);
 
   return (

@@ -147,8 +147,8 @@ const ParticleBackground = () => {
           key={i}
           className="absolute w-1 h-1 bg-primary/20 rounded-full"
           initial={{ 
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
+            x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
+            y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
             opacity: Math.random() * 0.5 + 0.2
           }}
           animate={{

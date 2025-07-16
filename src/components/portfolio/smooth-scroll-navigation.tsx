@@ -31,6 +31,7 @@ export default function SmoothScrollNavigation({
 
   useEffect(() => {
     const handleScroll = () => {
+      if (typeof window === 'undefined') return;
       const currentScrollY = window.scrollY
       
       // Check if scrolled past threshold
@@ -46,8 +47,10 @@ export default function SmoothScrollNavigation({
       setPrevScrollY(currentScrollY)
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+      return () => window.removeEventListener('scroll', handleScroll)
+    }
   }, [prevScrollY])
 
   const handleNavClick = (sectionId: string) => {

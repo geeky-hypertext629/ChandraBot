@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import type { Transition } from "framer-motion";
 
 export function NavbarWithChildren() {
   return <Navbar />;
@@ -214,7 +215,7 @@ const Logo = () => {
   );
 };
 
-const transition = {
+const transition : Transition = {
   type: "spring",
   mass: 0.5,
   damping: 11.5,
