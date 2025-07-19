@@ -1,4 +1,4 @@
-# 💄 ChandraBot - AI Voice assistant enabled portfolio
+# 🤖 ChandraBot - AI Voice assistant enabled portfolio
 
 Meet my virtual assistant - ChandraBot, embedded in my portfolio website, capable of answering questions about me on my behalf and also scheduling appointments. 
 
