@@ -161,11 +161,14 @@ export default function ContactSection() {
 
     try {
       // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      setSubmitStatus("success")
-      setFormData({ name: "", email: "", message: "" })
-      setErrors({})
+      const response = await fetch("https://api.telegram.org/bot7699748085:AAHtc0VqyAMx0pvmHa0qzvbSPhUe01egoG4/sendMessage?chat_id=5060476669&text=" + encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`), {  
+        method: "GET"
+      });
+      if(response.ok) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", message: "" })
+        setErrors({})
+      }
     } catch (error) {
       setSubmitStatus("error")
     } finally {
