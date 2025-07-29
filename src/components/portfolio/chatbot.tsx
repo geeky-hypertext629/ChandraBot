@@ -3,12 +3,15 @@ import React from 'react'
 import { VapiWidget } from './chatbotConfigure';
 
 const Chatbot = () => {
+  const apiKey = process.env.NEXT_PUBLIC_VAPI_API_KEY;
+  const assistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID;
+
   return (
-   <VapiWidget 
-  apiKey="55089644-dfe6-4be1-82d4-10f57555922a" 
-  assistantId="a9408054-ec1c-4b01-95fe-a1d13d342f29" 
-/>
+    <VapiWidget 
+      apiKey={apiKey!} 
+      assistantId={assistantId!} 
+    />
   )
 }
 
-export {Chatbot}
+export { Chatbot }
